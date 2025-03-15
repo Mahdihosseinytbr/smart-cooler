@@ -1,0 +1,650 @@
+
+        
+        h1{
+            position: relative;  
+            left: 55px;  
+            top: 20px;
+            border:0cap;
+            color:rgb(78, 16, 139);
+            font-family:Arial, Helvetica, sans-serif;
+            display: inline-block; /* مهم: باعث میشه عرض h1 فقط به اندازه متن باشه */  
+            border-bottom: 5px solid rgb(78, 16, 139); /* خط زیر نوشته */  
+            padding-bottom: 5px; /* فاصله بین متن و خط */  
+        }
+ 
+
+        .image1 {  
+            position: fixed; /* موقعیت ثابت */  
+            top: 190px; /* در مرکز عمودی قرار می‌گیرد */  
+            left: 35px; /* در فاصله 20 پیکسلی از سمت راست */  
+            transform: translateY(-50%); /* تنظیم دقیق مرکز عمودی */  
+            width: 175px; /* عرض عکس */  
+            height: auto; /* ارتفاع خودکار */  
+            z-index: 1000; /* اطمینان از نمایش روی سایر عناصر */  
+            }
+        .image2 {  
+            position: fixed; /* موقعیت ثابت */  
+            top: 190px; /* در مرکز عمودی قرار می‌گیرد */  
+            left: 260px; /* در فاصله 20 پیکسلی از سمت راست */  
+            transform: translateY(-50%); /* تنظیم دقیق مرکز عمودی */  
+            width: 155px; /* عرض عکس */  
+            height: auto; /* ارتفاع خودکار */  
+            z-index: 1000; /* اطمینان از نمایش روی سایر عناصر */   
+                }
+                .image3 {  
+                    position: fixed; /* موقعیت ثابت */  
+                    top: 380px; /* در مرکز عمودی قرار می‌گیرد */  
+                    left: 263px; /* در فاصله 20 پیکسلی از سمت راست */  
+                    transform: translateY(-50%); /* تنظیم دقیق مرکز عمودی */  
+                    width: 150px; /* عرض عکس */  
+                    height: auto; /* ارتفاع خودکار */  
+                    z-index: 1000; /* اطمینان از نمایش روی سایر عناصر */  
+                        }
+                        .image4 {  
+                            position: fixed; /* موقعیت ثابت */  
+                            top: 380px; /* در مرکز عمودی قرار می‌گیرد */  
+                            left: 30px; /* در فاصله 20 پیکسلی از سمت راست */  
+                            transform: translateY(-50%); /* تنظیم دقیق مرکز عمودی */  
+                            width: 188px; /* عرض عکس */  
+                            height: auto; /* ارتفاع خودکار */  
+                            z-index: 1000; /* اطمینان از نمایش روی سایر عناصر */  
+                                }
+                                .image5 {  
+                                    position: fixed; /* موقعیت ثابت */  
+                                    top: 310px; /* در مرکز عمودی قرار می‌گیرد */  
+                                    left: 760px; /* در فاصله 20 پیکسلی از سمت راست */  
+                                    transform: translateY(-50%); /* تنظیم دقیق مرکز عمودی */  
+                                    width: 550px; /* عرض عکس */  
+                                    height: auto; /* ارتفاع خودکار */  
+                                    z-index: 1000; /* اطمینان از نمایش روی سایر عناصر */  
+                                        }
+
+
+
+
+        body {  
+            margin: 0;  
+            overflow: hidden; /* جلوگیری از اسکرول */  
+            background-color: #b0e2ff; /* آبی روشن */  
+            height: 100vh; /* پوشش کامل صفحه */  
+        }  
+
+        .snowflake {  
+            position: absolute;  
+            width: 10px;  
+            height: 10px;  
+            background: white;  
+            border-radius: 50%;  
+            opacity: 0.7;  
+            animation: snowfall 3s linear infinite; /* انیمیشن */  
+        }  
+
+        /* انیمیشن بارش برف */  
+        @keyframes snowfall {  
+            0% {  
+                transform: translateY(0) translateX(0);  
+            }  
+            100% {  
+                transform: translateY(100vh) translateX(100px);  
+            }  
+        }  
+
+        /* ایجاد دانه‌های برف بیشتر */  
+        .snowflake:nth-child(1) {  
+            left: 10%;  
+            animation-delay: 0s;  
+        }  
+        .snowflake:nth-child(2) {  
+            left: 20%;  
+            animation-delay: 1s;  
+        }  
+        .snowflake:nth-child(3) {  
+            left: 30%;  
+            animation-delay: 2s;  
+        }  
+        .snowflake:nth-child(4) {  
+            left: 40%;  
+            animation-delay: 0.5s;  
+        }  
+        .snowflake:nth-child(5) {  
+            left: 50%;  
+            animation-delay: 1.5s;  
+        }  
+        .snowflake:nth-child(6) {  
+            left: 60%;  
+            animation-delay: 2.5s;  
+        }  
+        .snowflake:nth-child(7) {  
+            left: 70%;  
+            animation-delay: 0.75s;  
+        }  
+        .snowflake:nth-child(8) {  
+            left: 80%;  
+            animation-delay: 1.75s;  
+        }  
+        .snowflake:nth-child(9) {  
+            left: 90%;  
+            animation-delay: 2.75s;  
+        }  
+
+
+        .container {  
+            display: flex;  
+            justify-content: space-around;  
+            align-items: center;  
+            height: 100vh;  
+            flex-direction: row-reverse; /* اضافه کردن این خط */  
+        }
+
+        .thermometer, .humidity {  
+            width: 80px;  
+            height: 300px;  
+            top: 100px;  
+            left: 10px;
+            border-radius: 40px;  
+            position: relative;  
+            overflow: hidden;   
+            margin-bottom: 20px;  
+        }  
+
+        .thermometer {
+            position: absolute;  
+            top: 140px; /* دماسنج 100 پیکسل از بالا فاصله میگیره */  
+            left: 450px; /* دماسنج 50 پیکسل از چپ فاصله میگیره */   
+            background-color: #fdeded; /* قرمز روشن */  
+            box-shadow: 0 5px 15px rgba(169, 4, 4, 0.786); 
+        }  
+
+        .humidity {  
+            position: absolute;  
+            top: 140px; /* دماسنج 100 پیکسل از بالا فاصله میگیره */  
+            left: 560px; /* دماسنج 50 پیکسل از چپ فاصله میگیره */ 
+            box-shadow: 0 5px 15px rgba(9, 9, 214, 0.786); 
+            background-color: #e0f2f7; /* آبی روشن */  
+        }  
+
+        .thermometer .mercury, .humidity .mercury {  
+            position: absolute;  
+            bottom: 0;  
+            width: 100%;  
+            transition: height 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);  
+        }  
+
+        .thermometer .mercury {  
+            background: linear-gradient(to top, #ef5350, #e57373); /* طیف رنگی قرمز */  
+        }  
+
+        .humidity .mercury {  
+            background: linear-gradient(to top, #4dd0e1, #80deea); /* طیف رنگی آبی */  
+        }  
+
+        .thermometer .scale, .humidity .scale {  
+            position: absolute;  
+            top: 10px;  
+            left: 10px;  
+            color: rgb(78, 16, 139); 
+            font-size: 0.7em;  
+            display: flex;  
+            flex-direction: column;  
+            justify-content: space-between;  
+            height: 90%;  
+        }  
+
+        .thermometer .scale span, .humidity .scale span {  
+            position: relative;  
+            text-align: right;  
+            width: 40px;  
+            display: block;  
+        }  
+
+        .thermometer .scale span::after, .humidity .scale span::after {  
+            content: '';  
+            position: absolute;  
+            top: 50%;  
+            right: -12px;  
+            transform: translateY(-50%);  
+            width: 8px;  
+            height: 1px;  
+            background-color: #aaa;  
+        }  
+
+        .temperature-value{
+            position: fixed;  
+            top: 480px; /* فاصله‌اش از بالای کانتینر 320 پیکسل میشه */  
+            left: 445px; /* فاصله‌اش از سمت چپ کانتینر 25 پیکسل میشه */ 
+            font-size: 1.2em; 
+        }
+        .humidity-value {
+            position: fixed;   
+            top: 480px; /* فاصله‌اش از بالای کانتینر 320 پیکسل میشه */  
+            left: 560px; /* فاصله‌اش از سمت چپ کانتینر 25 پیکسل میشه */ 
+            font-size: 1.2em;  
+        } 
+
+
+        .image6 {  
+            position: fixed; /* مهم: برای موقعیت دهی رعد و برق */  
+            top: 310px; /* در مرکز عمودی قرار می‌گیرد */  
+            left: 760px; /* در فاصله 20 پیکسلی از سمت راست */  
+            transform: translateY(-50%); /* تنظیم دقیق مرکز عمودی */  
+            width: 550px; /* عرض عکس */  
+            height: auto; /* ارتفاع خودکار */  
+            z-index: 1000; /* اطمینان از نمایش روی سایر عناصر */  
+
+            
+                    /* استایل‌های قبلی */  
+                    h1 {  
+                        position: relative;  
+                        left: 55px;  
+                        top: 20px;  
+                        border: 0cap;  
+                        color: rgb(78, 16, 139);  
+                        font-family: Arial, Helvetica, sans-serif;  
+                        display: inline-block;  
+                        border-bottom: 5px solid rgb(78, 16, 139);  
+                        padding-bottom: 5px;  
+                    }  
+            
+                    .image1 {  
+                        position: fixed;  
+                        top: 190px;  
+                        left: 35px;  
+                        transform: translateY(-50%);  
+                        width: 175px;  
+                        height: auto;  
+                        z-index: 1000;  
+                    }  
+                    
+            
+                    .image2 {  
+                        position: fixed;  
+                        top: 190px;  
+                        left: 260px;  
+                        transform: translateY(-50%);  
+                        width: 155px;  
+                        height: auto;  
+                        z-index: 1000;  
+                    }  
+            
+                    .image3 {  
+                        position: fixed;  
+                        top: 380px;  
+                        left: 263px;  
+                        transform: translateY(-50%);  
+                        width: 150px;  
+                        height: auto;  
+                        z-index: 1000;  
+                    }  
+            
+                    .image4 {  
+                        position: fixed;  
+                        top: 380px;  
+                        left: 30px;  
+                        transform: translateY(-50%);  
+                        width: 188px;  
+                        height: auto;  
+                        z-index: 1000;  
+                    }  
+            
+                    .image5 {  
+                        position: relative; /* برای موقعیت‌دهی رعد و برق */  
+                        top: 340px;  
+                        left: 780px;  
+                        transform: translateY(-50%);  
+                        width: 500px;  
+                        height: auto;  
+                        z-index: 1000;  
+                    }  
+            
+                    body {  
+                        margin: 0;  
+                        overflow: hidden;  
+                        background-color: #b0e2ff;  
+                        height: 100vh;  
+                    }  
+            
+                    .snowflake {  
+                        position: absolute;  
+                        width: 10px;  
+                        height: 10px;  
+                        background: white;  
+                        border-radius: 50%;  
+                        opacity: 0.7;  
+                        animation: snowfall 3s linear infinite;  
+                    }  
+            
+                    @keyframes snowfall {  
+                        0% {  
+                            transform: translateY(0) translateX(0);  
+                        }  
+                        100% {  
+                            transform: translateY(100vh) translateX(100px);  
+                        }  
+                    }  
+            
+                    .snowflake:nth-child(1) {  
+                        left: 10%;  
+                        animation-delay: 0s;  
+                    }  
+            
+                    .snowflake:nth-child(2) {  
+                        left: 20%;  
+                        animation-delay: 1s;  
+                    }  
+            
+                    .snowflake:nth-child(3) {  
+                        left: 30%;  
+                        animation-delay: 2s;  
+                    }  
+            
+                    .snowflake:nth-child(4) {  
+                        left: 40%;  
+                        animation-delay: 0.5s;  
+                    }  
+            
+                    .snowflake:nth-child(5) {  
+                        left: 50%;  
+                        animation-delay: 1.5s;  
+                    }  
+            
+                    .snowflake:nth-child(6) {  
+                        left: 60%;  
+                        animation-delay: 2.5s;  
+                    }  
+            
+                    .snowflake:nth-child(7) {  
+                        left: 70%;  
+                        animation-delay: 0.75s;  
+                    }  
+            
+                    .snowflake:nth-child(8) {  
+                        left: 80%;  
+                        animation-delay: 1.75s;  
+                    }  
+            
+                    .snowflake:nth-child(9) {  
+                        left: 90%;  
+                        animation-delay: 2.75s;  
+                    }  
+            
+                    .container {  
+                        display: flex;  
+                        justify-content: space-around;  
+                        align-items: center;  
+                        height: 100vh;  
+                        flex-direction: row-reverse;  
+                    }  
+            
+                    .thermometer,  
+                    .humidity {  
+                        width: 80px;  
+                        height: 300px;  
+                        top: 100px;  
+                        left: 10px;  
+                        border-radius: 40px;  
+                        position: relative;  
+                        overflow: hidden;  
+                        margin-bottom: 20px;  
+                    }  
+            
+                    .thermometer {  
+                        position: absolute;  
+                        top: 140px;  
+                        left: 450px;  
+                        background-color: #fdeded;  
+                        box-shadow: 0 5px 15px rgba(169, 4, 4, 0.786);  
+                    }  
+            
+                    .humidity {  
+                        position: absolute;  
+                        top: 140px;  
+                        left: 560px;  
+                        box-shadow: 0 5px 15px rgba(9, 9, 214, 0.786);  
+                        background-color: #e0f2f7;  
+                    }  
+            
+                    .thermometer .mercury,  
+                    .humidity .mercury {  
+                        position: absolute;  
+                        bottom: 0;  
+                        width: 100%;  
+                        transition: height 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);  
+                    }  
+            
+                    .thermometer .mercury {  
+                        background: linear-gradient(to top, #ef5350, #e57373);  
+                    }  
+            
+                    .humidity .mercury {  
+                        background: linear-gradient(to top, #7fc7ff, #42a5f5);  
+                    }  
+                }
+/* افکت رعد و برق */
+/* افکت رعد و برق با حرکت موش */
+.lightning-hover .lightning-bolt {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lightning-hover:hover .lightning-bolt {
+    animation: strike 0.3s 2;
+    opacity: 1;
+}
+.image-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.lightning-bolt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 40px 20px;
+    border-color: transparent transparent #ffd700 transparent;
+    opacity: 0;
+    z-index: 1;
+}
+
+.lightning-bolt::before,
+.lightning-bolt::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+}
+
+.lightning-bolt::before {
+    top: 40px;
+    left: -20px;
+    border-width: 0 20px 40px 20px;
+    border-color: transparent transparent #ffd700 transparent;
+}
+
+.lightning-bolt::after {
+    top: 80px;
+    left: -40px;
+    border-width: 0 40px 80px 40px;
+    border-color: transparent transparent #ffd700 transparent;
+}
+
+@keyframes strike {
+    0% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1); 
+        filter: drop-shadow(0 0 10px #ffd700);
+    }
+    50% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.2); 
+        filter: drop-shadow(0 0 20px #ffd700);
+    }
+    100% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1); 
+        filter: drop-shadow(0 0 0 #ffd700);
+    }
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.lightning-image {
+    position: fixed; /* موقعیت ثابت */  
+    top: 300px; /* در مرکز عمودی قرار می‌گیرد */  
+    left: 1000px;
+    width: 400px; /* سایز تصویر رعد */
+    height: auto;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: 1002;
+}
+
+.image-container:hover .lightning-image {
+    opacity: 1;
+    animation: lightningStrike 0.5s infinite;
+}
+
+@keyframes lightningStrike {
+    0% {
+        transform: translate(-50%, -50%) rotate(-20deg) scale(0.9);
+        filter: drop-shadow(0 0 10px #ff0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-20deg) scale(1.1);
+        filter: drop-shadow(0 0 20px #ff0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-20deg) scale(0.8);
+        filter: drop-shadow(0 0 0 #ff0);
+        opacity: 0;
+    }
+}
+
+/* در پایین فایل Cooler web.css */
+.image1-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.color-circle {
+
+    position: fixed;  
+    top: 131px;  
+    left: 125px; 
+    transform: translateX(-50%);
+    width: 130px;
+    height: 125px;
+    background:#3cff22;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.image1-container.active .color-circle {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 20px #3cff22;
+}
+
+/* در پایین فایل Cooler web.css */
+.image2-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.color-circle1 {
+
+    position: fixed;  
+    top: 131px;  
+    left: 336px; 
+    transform: translateX(-50%);
+    width: 130px;
+    height: 125px;
+    background:#3cff22;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.image2-container.active .color-circle1 {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 20px #3cff22;
+}
+
+/* در پایین فایل Cooler web.css */
+.image3-container {
+    position: relative; /* حفظ موقعیت نسبی برای دایره */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.color-circle3 {
+    position: fixed; /* تغییر از fixed به absolute */
+    top: 335px;
+    left: 337px;
+    transform: translate(-50%, -20px); /* تنظیم موقعیت عمودی */
+    width: 130px;
+    height: 125px;
+    background: #3cff22;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 1; /* زیر تصویر اصلی */
+    pointer-events: none; /* جلوگیری از مسدود کردن کلیک */
+}
+
+.image3-container.active .color-circle3 {
+    opacity: 0.9;
+    transform: translate(-50%, -20px) scale(1.15);
+    box-shadow: 0 0 25px #3cff22;
+}
+
+/* در پایین فایل Cooler web.css */
+.image4-container {
+    position: relative; /* حفظ موقعیت نسبی برای دایره */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.color-circle4 {
+    position: fixed; /* تغییر از fixed به absolute */
+    top: 335px;
+    left: 129px;
+    transform: translate(-50%, -20px); /* تنظیم موقعیت عمودی */
+    width: 130px;
+    height: 125px;
+    background: #3cff22;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 1; /* زیر تصویر اصلی */
+    pointer-events: none; /* جلوگیری از مسدود کردن کلیک */
+}
+
+.image4-container.active .color-circle4 {
+    opacity: 0.9;
+    transform: translate(-50%, -20px) scale(1.15);
+    box-shadow: 0 0 25px #3cff22;
+}
+

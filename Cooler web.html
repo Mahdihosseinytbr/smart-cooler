@@ -1,0 +1,153 @@
+<!DOCTYPE html>  
+<html lang="fa">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title> Air conditioner controller </title>  
+    <link rel="stylesheet" href="Cooler web.css">  
+</head>  
+
+<h1>     SMART CONTROLLER </h1>
+<body>  
+
+    <!-- ایجاد دانه‌های برف -->  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+    <div class="snowflake"></div>  
+
+</body>  
+
+<div style="display: flex; justify-content: center; align-items: center; height: 300px;">  
+    <img src="drop.png" class="image1" >
+    <div class="image1-container" onclick="toggleCircle(this)">
+        <img src="drop.png" class="image1">
+        <div class="color-circle"></div>
+    </div>
+    <img src="slow fan.png" class="image2">
+    <div class="image2-container" onclick="toggleCircle(this)">
+        <img src="slow fan.png" class="image2">
+        <div class="color-circle1"></div>
+    </div>
+    <img src="fast fan.png" class="image3">
+
+    <div class="image3-container" onclick="toggleCircle(this)">
+        <img src="fast fan.png" class="image3">
+        <div class="color-circle3"></div>
+    </div>
+
+    <img src="setting.png" class="image4">
+    
+    <div class="image4-container" onclick="toggleCircle(this)">
+        <img src="setting.png" class="image4">
+        <div class="color-circle4"></div>
+    </div>
+
+    <img src="house.png" class="image5">
+
+    <div class="image-container">
+        <img src="house.png" class="image5" ">
+        <img src="lightning.png" class="lightning-image">
+    </div>
+  </div> 
+
+</img>  
+
+  <body>  
+
+    <div class="container">  
+        <div class="thermometer-container">  
+            <div class="thermometer">  
+                <div class="scale">  
+                    <span>50°C</span>  
+                    <span>40°C</span>  
+                    <span>30°C</span>  
+                    <span>20°C</span>  
+                    <span>10°C</span>  
+                    <span>0°C</span>  
+                    <span>-10°C</span>  
+                    <span>-20°C</span>  
+                    <span>-30°C</span>  
+                </div>  
+                <div class="mercury" id="temperature-mercury" style="height: 0%;"></div>  
+            </div>  
+            <div class="temperature-value"> Temp :  <span id="temperature-value">0°C</span></div>  
+        </div>  
+    
+        <div class="humidity-container">  
+            <div class="humidity">  
+                <div class="scale">  
+                    <span>100%</span>  
+                    <span>90%</span>  
+                    <span>80%</span>  
+                    <span>70%</span>  
+                    <span>60%</span>  
+                    <span>50%</span>  
+                    <span>40%</span>  
+                    <span>30%</span>  
+                    <span>20%</span>  
+                    <span>10%</span>  
+                    <span>0%</span>  
+                </div>  
+                <div class="mercury" id="humidity-mercury" style="height: 0%;"></div>  
+            </div>  
+            <div class="humidity-value">Humi : <span id="humidity-value">0%</span></div>  
+        </div>  
+    </div>  
+    
+    <script>  
+    function toggleCircle(element) {
+    element.classList.toggle('active');
+}
+        // دماسنج  
+        const temperatureMercury = document.getElementById('temperature-mercury');  
+        const temperatureValue = document.getElementById('temperature-value');  
+        let currentTemperature = 25; // مقدار اولیه دما  
+    
+        function updateTemperatureLevel(temperature) {  
+            // محدود کردن دما بین -30 و 50 درجه  
+            if (temperature < -30) temperature = -30;  
+            if (temperature > 50) temperature = 50;  
+    
+            // محاسبه ارتفاع جیوه بر اساس دما (از 0% تا 100%)  
+            const height = `calc(${(temperature + 30) * (100 / 80)}% - 2px)`;  
+            temperatureMercury.style.height = height;  
+            temperatureValue.textContent = `${temperature}°C`;  
+        }  
+    
+        // رطوبت‌سنج  
+        const humidityMercury = document.getElementById('humidity-mercury');  
+        const humidityValue = document.getElementById('humidity-value');  
+        let currentHumidity = 50; // مقدار اولیه رطوبت  
+    
+        function updateHumidityLevel(humidity) {  
+            if (humidity < 0) humidity = 0;  
+            if (humidity > 100) humidity = 100;  
+    
+            const height = `calc(${humidity}% - 2px)`;  
+            humidityMercury.style.height = height;  
+            humidityValue.textContent = `${humidity}%`;  
+        }  
+    
+        // فراخوانی اولیه  
+        updateTemperatureLevel(currentTemperature);  
+        updateHumidityLevel(currentHumidity);  
+    
+        // بروزرسانی دوره‌ای دما و رطوبت (فقط برای تست)  
+        setInterval(() => {  
+            currentTemperature = Math.floor(Math.random() * 81) - 30; // دمای بین -30 تا 50  
+            currentHumidity = Math.floor(Math.random() * 101); // رطوبت بین 0 تا 100  
+            updateTemperatureLevel(currentTemperature);  
+            updateHumidityLevel(currentHumidity);  
+        }, 2000);  
+        
+    </script>  
+    
+    </body>
+
+</html>  
